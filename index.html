@@ -6,11 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
     <link
-      rel="stylesheet"
-      href="path/to/font-awesome/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Raleway:wght@400;600;700;800&family=Roboto&family=Sofia+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
       rel="stylesheet"
     />
@@ -20,15 +15,14 @@
       <div class="todo-app">
         <h2>To-Do List <img src="" alt="" /></h2>
         <div class="input-task">
-          <input type="text" />
-          <img src="./assets/addIcon.png" alt="" id="addIcon" />
-          <i class="fa-plus" style="color: #ffffff; width: 30px;" ></i>
+          <input type="text" id="inputBox">
+          <img src="./assets/plusWhite.png" alt="" onclick="addTask()" />
         </div>
-        <div class="list-container">
-          <ul id="">
-            <li></li>
+        <!-- <div class="container"> -->
+          <ul id="listContainer">
+            <!-- <li>Task 1</li> -->
           </ul>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
     <script src="./app.js"></script>
