@@ -1,18 +1,19 @@
 let inputBox = document.getElementById("inputBox");
-let listContainer = document.getElementById("listContainer");
+let list = document.getElementById("list");
 
-function addTask(){
-    if(inputBox.value == ''){
-      alert("Please enter a task first..");
-    }else{
-        let createList = document.createElement("li");
-        listContainer.innerText = inputBox.value;
-        listContainer.appendChild(createList);
+function addTask() {
+  if (inputBox.value.trim() == "") {
+    alert("Please enter a task first..");
+  } else {
+    // Creating li
+    let createli = document.createElement("li");
+    createli.innerText = inputBox.value;
+    list.appendChild(createli);
 
-        
-        let closeIcon =  document.createElement("img");
-        closeIcon.src = "assets/closeIcon.png";
-        createList.appendChild(closeIcon);
-    }
-    inputBox.value = '';
+    // Creating img
+    let closeIcon = document.createElement("img");
+    closeIcon.src = "./assets/closeIcon.png";
+    createli.appendChild("closeIcon");
+  }
+  inputBox.value = "";
 }
