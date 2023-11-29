@@ -12,21 +12,29 @@
     />
     <title>Document</title>
   </head>
-  <div class="container">
-    <div class="todoApp">
-      <h2>To-Do List<img src="./assets/editImage.png" alt="" /></h2>
-      <div class="input-row">
-        <input type="text" id="inputBox" />
-        <img src="./assets/addIcon.png" alt="image" onclick="addTask()" />
-      </div>
-      <div class="ulContainer">
-        <ul id="list">
-          <li>Task 1 <img src="./assets/closeIcon.png" alt="" /></li>
-        </ul>
+
+  <body>
+    <div class="container">
+      <div class="todoApp">
+        <h2>To-Do List<img src="./assets/editImage.png" alt="" /></h2>
+        <div class="input-row" id="input-row">
+          <input type="text" id="inputBox" placeholder="Write something here.."/>
+          <span onclick="addTask()"><i class="fa-solid fa-plus" id="addBtn">
+            <i class="fa-solid fa-floppy-disk" id="saveBtn"></i>
+          </i></span>
+        </div>
+        <div class="ulContainer">
+          <ul id="list">
+            <!-- <li>Task 1 <img src="./assets/closeIcon.png" alt="" /></li>
+            <li>Task 1<i class="fa-solid fa-xmark"></i></li> -->
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <body>
     <script src="./app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a2d322897d.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
