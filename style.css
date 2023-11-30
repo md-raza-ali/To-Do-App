@@ -6,24 +6,51 @@
   user-select: none;
 }
 .container {
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom right, #8e2de2, #4a00e0);
+  /* background-image: linear-gradient(to bottom right, #8e2de2, #4a00e0); */
   padding: 10px;
+  background: url("./assets/bg.png") no-repeat center center fixed;
+  background-size: cover;
 }
+/* .container::before{
+  content: '';
+  position: absolute;
+  top: 90px;
+  left: 360px;
+  width: 150px;
+  height: 150px;
+  background-color: #FFCC00;
+  border-radius: 50%;
+} */
 
 .todoApp {
   width: 100%;
   max-width: 550px;
-  background-color: aliceblue;
-  margin: 80px auto 30px;
-  padding: 20px;
+  margin: 100px auto 30px;
   border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .todoApp h2 {
   font-size: 36px;
   display: flex;
   align-items: center;
+}
+.todoApp h2::before{
+  content: '';
+  position: absolute;
+  top: 66px;
+  left: 22px;
+  width: 110px;
+  height: 6px;
+  background-color: #FFCC00;
+  border-radius: 20px;
+
 }
 
 .todoApp h2 img {
@@ -44,14 +71,18 @@
   border-radius: 50px;
   font-size: 16px;
 }
-.input-row span {
+.input-row input:focus {
+  background-color: rgba(240, 248, 255, 0.644);
+}
+.input-row button {
   margin-left: 10px;
-  /* background-color: rgba(226, 223, 223, 0.979); */
-  background-color: #4a00e0;
-  color:white;
+  background-color: rgb(90, 16, 238);
+  color: white;
+  border: none;
+  outline: no;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,13 +104,33 @@ ul li {
 .parent {
   position: relative;
 }
-.right-span-img-close {
+.right-btn-img-close {
   position: absolute;
   right: 0.8rem;
   font-size: 18px;
+  border: none;
+  padding: 6px;
+  background: transparent;
 }
-.right-span-img-edit {
+.right-btn-img-edit {
   position: absolute;
   right: 2.8rem;
   font-size: 16px;
+  border: none;
+  padding: 6px;
+  background: transparent;
+}
+#dltBtn {
+  margin-left: 10px;
+  /* background-color: rgba(226, 223, 223, 0.979); */
+  background-color: #e00038;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }

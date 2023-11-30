@@ -1,8 +1,12 @@
 let inputBox = document.getElementById("inputBox");
 let list = document.getElementById("list");
+let addBtn = document.getElementById("addBtn");
 let editedLi = null;
+
 let saveBtn = document.getElementById("saveBtn");
 saveBtn.style.display = "none";
+// let dltBtn = document.getElementById("dltBtn");
+// dltBtn.style.background = "red";
 
 function addTask() {
   if (inputBox.value.trim() === "") {
@@ -13,38 +17,65 @@ function addTask() {
     createLi.innerText = inputBox.value;
     list.appendChild(createLi);
 
-    // Creating Cancel button
-    let spanClose = document.createElement("span");
-    spanClose.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
-    createLi.appendChild(spanClose);
+    // Creating Cancel button in Li
+    let closeBtn = document.createElement("button");
+    closeBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+    createLi.appendChild(closeBtn);
 
-    // Creating Cancel button
-    let spanEdit = document.createElement("span");
-    spanEdit.innerHTML = `<i class="fa-solid fa-edit"></i>`;
-    createLi.appendChild(spanEdit)
-     
-    // Styling Li
+    // Creating Edit button in Li
+    let editBtn = document.createElement("button");
+    editBtn.innerHTML = `<i class="fa-solid fa-edit"></i>`;
+    createLi.appendChild(editBtn);
+
+    // Styling
     createLi.setAttribute("class", "parent");
-    spanClose.setAttribute("class", "right-span-img-close");
-    spanEdit.setAttribute("class", "right-span-img-edit");
+    closeBtn.setAttribute("class", "right-btn-img-close");
+    editBtn.setAttribute("class", "right-btn-img-edit");
+
+    closeBtn.addEventListener("mouseover", function () {
+      closeBtn.style.color = "red";
+    });
+    closeBtn.addEventListener("mouseout", function () {
+      closeBtn.style.color = "black";
+    });
+    editBtn.addEventListener("mouseover", function () {
+      editBtn.style.color = "#8e2de2";
+    });
+    editBtn.addEventListener("mouseout", function () {
+      editBtn.style.color = "black";
+    });
 
     // Click event to remove Li
-    spanClose.addEventListener("click", function(){
-      createLi.remove()
-    })
+    closeBtn.addEventListener("click", function () {
+      createLi.remove();
+    });
 
     // Click event to edit Li
-    spanEdit.addEventListener("click", function(){
-      let edit = createLi.childNodes[0].nodeValue;
-      inputBox.value = edit;
+    editBtn.addEventListener("click", function () {
+      let editText = createLi.childNodes[0].nodeValue;
+      inputBox.value = editText;
       editedLi = createLi;
-      // saveBtn.style.display = "inline-block";
-      // let addBtn = document.getElementById("addBtn");
-      // addBtn.style.display = "none";
 
-      
-    })
-    
+      saveBtn.style.display = "inline-block";
+      addBtn.style.display = "none";
+    });
+
+    // Click event to save Li
+    saveBtn.addEventListener("click", function () {
+      editedLi.childNodes[0].nodeValue = inputBox.value;
+
+      saveBtn.style.display = "none";
+      addBtn.style.display = "inline-block";
+    });
   }
+  // Reset inputBox value
   inputBox.value = "";
 }
+
+// function saveData(){
+//   localStorage.setItem("data", list.innerHTML);
+// }
+// function showTask(){
+//   list.innerHTML = localStorage.getItem("data");
+// }
+// showTask()

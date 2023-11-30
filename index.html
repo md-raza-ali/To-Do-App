@@ -18,10 +18,20 @@
       <div class="todoApp">
         <h2>To-Do List<img src="./assets/editImage.png" alt="" /></h2>
         <div class="input-row" id="input-row">
-          <input type="text" id="inputBox" placeholder="Write something here.."/>
-          <span onclick="addTask()"><i class="fa-solid fa-plus" id="addBtn">
-            <i class="fa-solid fa-floppy-disk" id="saveBtn"></i>
-          </i></span>
+          <input
+            type="text"
+            id="inputBox"
+            placeholder="Write something here.."
+          />
+          <button onclick="addTask()" id="addBtn">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <!-- <button>
+            <i class="fa-solid fa-trash"></i>
+          </button> -->
+          <button id="saveBtn">
+            <i class="fa-solid fa-floppy-disk"></i>
+          </button>
         </div>
         <div class="ulContainer">
           <ul id="list">
