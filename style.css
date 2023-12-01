@@ -70,6 +70,7 @@
   outline: none;
   border-radius: 50px;
   font-size: 16px;
+  margin-top: 20px;
 }
 .input-row input:focus {
   background-color: rgba(240, 248, 255, 0.644);
@@ -79,7 +80,7 @@
   background-color: rgb(90, 16, 238);
   color: white;
   border: none;
-  outline: no;
+  outline: none;
   border-radius: 50%;
   width: 38px;
   height: 36px;
@@ -87,19 +88,27 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-top: 20px;
 }
 ul {
   list-style: none;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 ul li {
   display: flex;
   align-items: center;
-  /* padding-left: 20px; */
-  line-height: 30px;
+  line-height: 40px;
   padding-left: 20px;
-  text-wrap: wrap;
   overflow: hidden;
+}
+ul li::before{
+  content: '';
+  position: absolute;
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  background-color:#FFCC00;
+  border-radius: 50%;
 }
 .parent {
   position: relative;
@@ -120,9 +129,9 @@ ul li {
   padding: 6px;
   background: transparent;
 }
-#dltBtn {
+/* #dltBtn {
   margin-left: 10px;
-  /* background-color: rgba(226, 223, 223, 0.979); */
+  background-color: rgba(226, 223, 223, 0.979);
   background-color: #e00038;
   color: white;
   border: none;
@@ -133,4 +142,4 @@ ul li {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
+} */

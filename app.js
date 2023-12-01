@@ -5,8 +5,8 @@ let editedLi = null;
 
 let saveBtn = document.getElementById("saveBtn");
 saveBtn.style.display = "none";
-// let dltBtn = document.getElementById("dltBtn");
-// dltBtn.style.background = "red";
+let dltBtn = document.getElementById("dltBtn");
+dltBtn.style.display = "none";
 
 function addTask() {
   if (inputBox.value.trim() === "") {
@@ -58,6 +58,7 @@ function addTask() {
 
       saveBtn.style.display = "inline-block";
       addBtn.style.display = "none";
+      dltBtn.style.display = "none";
     });
 
     // Click event to save Li
@@ -79,3 +80,17 @@ function addTask() {
 //   list.innerHTML = localStorage.getItem("data");
 // }
 // showTask()
+
+// Delete all button
+// function deleteAll() {
+//   // Get a reference to the todoList element
+//   list = document.getElementById("list");
+
+//   // Loop through each child of the todoList and remove it
+//   while (list.firstChild) {
+//     list.removeChild(list.firstChild);
+//   }
+
+//   // Hide the deleteAllBtn
+//   dltBtn.style.display = "none";
+// }
