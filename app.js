@@ -1,4 +1,4 @@
-let inputBox = document.getElementById("inputBox");
+let = document.getElementById("inputBox");
 let list = document.getElementById("list");
 let addBtn = document.getElementById("addBtn");
 let editedLi = null;
@@ -59,6 +59,8 @@ function addTask() {
       saveBtn.style.display = "inline-block";
       addBtn.style.display = "none";
       dltBtn.style.display = "none";
+
+      
     });
 
     // Click event to save Li
@@ -67,6 +69,18 @@ function addTask() {
 
       saveBtn.style.display = "none";
       addBtn.style.display = "inline-block";
+      inputBox.value = "";
+    });
+
+    // Click event for showing completion of task
+    createLi.addEventListener("click", function () {
+      if (
+        createLi.childNodes[0].nodeValue.style.textDecoration !== "line-through"
+      ) {
+        createLi.style.textDecoration = "line-through";
+      } else {
+        createLi.style.textDecoration = "none";
+      }
     });
   }
   // Reset inputBox value
